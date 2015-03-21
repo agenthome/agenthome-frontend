@@ -1,0 +1,7 @@
+<h1 class="heading -large">{{ home.title }}</h1>
+
+<ul>
+	<li><a href="/#/profile">Profile</a></li>
+	<li ng-show="isAuthenticated()"><a href="/logout">Logout</a></li>
+	<li ng-show="!isAuthenticated()"><a href="/login">Login</a></li>
+</ul>
