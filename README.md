@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/chrismccluskey/agenthome/badges/gpa.svg)](https://codeclimate.com/github/chrismccluskey/agenthome)
+
 agentho.me
 ==========
 Secure team and faction planning for Ingress agents and activities. This repository is the source code for what will be hosted at agentho.me.

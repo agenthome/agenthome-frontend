@@ -1,13 +1,6 @@
-<h1 class="heading -large">{{ home.title }}</h1>
+<img class="pull-right img-responsive img-rounded" src="{{ profile.picture }}" />
 
-<ul>
-	<li>Profile</li>
-	<li><a href="/logout">Logout</a></li>
-</ul>
-login
-<img src="images/angular.png" height="100" />
-<img src="images/gulp.png" height="100" />
-<img src="images/browserify.png" height="100" />
+<h1 class="heading -large">{{ profile.name }}</h1>
 
-<button ng-show="!isAuthenticated()" ng-click="authenticate('google')">Sign in with Google</button>
-<button ng-click="getProfile()">get profile</button>
+<p>Google ID: <a href="{{ profile.link }}">{{ profile.id }}</a></p>
+

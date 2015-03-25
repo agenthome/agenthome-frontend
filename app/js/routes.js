@@ -5,20 +5,31 @@
  */
 function Routes($stateProvider, $locationProvider, $urlRouterProvider, $authProvider) {
 
+  var requireAuthentication = function($q, $location, $auth) {
+    var deferred = $q.defer();
+
+    if(!$auth.isAuthenticated()) {
+      $location.path('/login');
+    } else {
+      deferred.resolve();
+    }
+    return deferred.promise;
+  };
+
   $locationProvider.html5Mode(true);
 
   $stateProvider
   .state('Home', {
     url: '/',
-    controller: 'HomeController',
+    controller: 'HomeController as home',
     templateUrl: 'home.html',
     title: 'Home'
   })
   .state('Login', {
     url: '/login',
-    controller: 'LoginController',
+    controller: 'LoginController as login',
     templateUrl: 'login.html',
-    title: 'Login'
+    title: 'Sign In'
   })
   .state('Logout', {
     url: '/logout',
@@ -28,19 +39,10 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider, $authProv
   .state('Profile', {
     url: '/profile',
     templateUrl: 'profile.html',
-    controller: 'ProfileController',
+    controller: 'ProfileController as profile',
     title: 'Profile',
     resolve: {
-      authenticated: function($q, $location, $auth) {
-        var deferred = $q.defer();
-
-        if(!$auth.isAuthenticated()) {
-          $location.path('/login');
-        } else {
-          deferred.resolve();
-        }
-        return deferred.promise;
-      }
+      authenticated: requireAuthentication
     }
   });
 
@@ -48,6 +50,7 @@ function Routes($stateProvider, $locationProvider, $urlRouterProvider, $authProv
 
   $authProvider.google({
     responseType: 'token',
+    scope: [],
     clientId: '956000004577-0u17q327ohdch3nbbrdcm32cffeihjtn.apps.googleusercontent.com'
   });
 
