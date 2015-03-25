@@ -47,7 +47,12 @@ module.exports = function(config) {
 
       // test files
       'test/unit/**/*.js'
-    ]
+    ],
+
+    coverageReporter: {
+      type: 'lcov',
+      dir:  'coverage'
+    }
 
   });
 

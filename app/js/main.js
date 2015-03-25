@@ -4,6 +4,9 @@ var angular = require('angular');
 
 // angular modules
 require('angular-ui-router');
+require('angular-strap');
+require('../../node_modules/angular-strap/dist/angular-strap.tpl.min');
+require('angular-messages');
 require('satellizer');
 require('./templates');
 require('./controllers/_index');
@@ -15,6 +18,8 @@ angular.element(document).ready(function() {
 
   var requires = [
     'ui.router',
+    'ngMessages',
+    'mgcrea.ngStrap',
     'satellizer',
     'templates',
     'app.controllers',

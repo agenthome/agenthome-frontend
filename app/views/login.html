@@ -1,7 +1,19 @@
-<h1 class="heading -large">{{ home.title }}</h1>
+<h1 class="heading -large">{{ login.title }}</h1>
 
-<ul>
-	<li><a href="/#/profile">Profile</a></li>
-</ul>
+<p>To use this tool, we need to confirm your identity with Google. Click the button below to sign into Google with the account which is linked from your Ingress profile.</p>
 
-<button ng-show="!isAuthenticated()" ng-click="authenticate('google')">Sign in with Google</button>
+<center><button type="button" class="btn btn-lg btn-primary" ng-show="!isAuthenticated()" ng-click="authenticate('google')">Sign in to Google using your Ingress account</button></center>
+
+<h2 class="heading -large">Privacy Q&A</h2>
+
+<dl>
+  <dt>Q: What information do you get from Google?</dt>
+  <dd>A: Only your Google identity is provided currently. Your Google identity contains your name, gender, Google+ profile link, Google+ default photo and Google+ ID.</dd>
+  <dt>Q: Why do you need me to sign in with the account I use to play ingress?</dt>
+  <dd>A: To facilitate a trusted network of real ingress players on agentho.me, team leaders will need to verify you in-game by clicking the G+ button from your Agent stats and provide that URL to agentho.me. If the profile link provided by the team leader matches with the profile link provided from Google, your agentho.me profile will be verified and you will be able to receive intelligence from your faction and team(s).</dd>
+  <dt>Q: Will you be able to login to my ingress account and play the game as me?</dt>
+  <dd>A: Absolutely not. No confidential information or other account access is given to agentho.me. Only your Google identity (see the "What information do you get from Google?") is provided.</dd>
+  <dt>Q: Is the source code for this application available for review?</dt>
+  <dd>A: Yes it is! If you want to inspect the code used to run agentho.me and / or contribute to the project, visit our <a href="http://github.com/agenthome">GitHub</a>.</dd>
+</dl>
+

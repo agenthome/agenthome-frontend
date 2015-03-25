@@ -7,6 +7,10 @@ var controllersModule = require('./_index');
  */
 function LoginController($scope, $auth) {
 
+  var vm = this;
+
+  vm.title = 'Sign In';
+
   $scope.authenticate = function(provider) {
     $auth.authenticate(provider)
       .then(function() {
